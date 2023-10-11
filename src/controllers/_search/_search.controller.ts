@@ -1,4 +1,4 @@
-import { Controller, Get, Param, Query } from '@nestjs/common';
+import { Controller, Get, HttpStatus, Param, ParseIntPipe, Query } from '@nestjs/common';
 import { SearchService } from './_search.service';
 
 @Controller('search')
@@ -26,7 +26,7 @@ export class SearchController {
   //localhost:3000/search/id/:id
   @Get("id/:id")
   searchByDishId(
-    @Param("id") id : number
+    @Param("id", new ParseIntPipe({ errorHttpStatusCode : HttpStatus.NOT_ACCEPTABLE })) id : number
   ) : Promise<any>
   {
     console.log(id)
