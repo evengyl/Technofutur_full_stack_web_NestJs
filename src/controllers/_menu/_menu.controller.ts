@@ -12,12 +12,14 @@ export class MenuController {
     //localhost:3000/menu?pageName=pizzas
     //localhost:3000/menu?pageName=pizzas&type=carnos
     @Get()
-    getAllMenu(
+    getAllMenu( 
         @Query("pageName") pageName: string,
         @Query("type") type: string,
         @Query() queryParams: any
     ): Promise<any[]> {
         console.log(queryParams)
+        console.log(pageName)
+        console.log(type)
         try {
             return this.menuService.getAllMenu(pageName, type)
         }

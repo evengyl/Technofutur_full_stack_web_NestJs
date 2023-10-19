@@ -1,17 +1,17 @@
-import { IsArray, IsDefined, IsNumber, IsString } from "class-validator"
+import { IsArray, IsDefined, IsNumber, IsString, Max, MaxLength, Min, MinLength } from "class-validator"
 
 export class Command_DTO
 {
     @IsDefined()
-    @IsNumber()
-    id : number
-
-    @IsDefined()
     @IsString()
+    @MinLength(4)
+    @MaxLength(12)
     type : string
 
     @IsDefined()
     @IsNumber()
+    @Min(1)
+    @Max(99)
     qty : number
 
     @IsArray()
@@ -21,4 +21,6 @@ export class Command_DTO
     rem : string[]
 
 }
+
+
 

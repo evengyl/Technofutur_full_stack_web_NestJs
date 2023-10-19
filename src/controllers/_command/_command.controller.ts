@@ -8,12 +8,12 @@ export class CommandController {
     constructor(private readonly commandService : CommandService) {}
 
     @Post("one")
-    addOneCommand(
+    async addOneCommand(
         @Body(ValidationPipe) oneCommand : Command_DTO
     ) : Promise<any>
     {
         try{
-            this.commandService.addOneCommand(oneCommand)
+            return this.commandService.addOneCommand(oneCommand)
         }
         catch(error){
             console.log(error)
@@ -28,7 +28,7 @@ export class CommandController {
     ) : Promise<any>
     {
         try{
-            this.commandService.addCommand(list)
+            return this.commandService.addCommand(list)
         }
         catch(error){
             console.log(error)
