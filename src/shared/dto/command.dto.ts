@@ -1,12 +1,11 @@
-import { IsArray, IsDefined, IsNumber, IsString, Max, MaxLength, Min, MinLength } from "class-validator"
+import { IsArray, IsDefined, IsEnum, IsNumber, IsString, Max, MaxLength, Min, MinLength } from "class-validator"
+import { TypeRegime } from "../entities/command/command.entity"
 
 export class Command_DTO
 {
     @IsDefined()
-    @IsString()
-    @MinLength(4)
-    @MaxLength(12)
-    type : string
+    @IsEnum(TypeRegime)
+    type : TypeRegime
 
     @IsDefined()
     @IsNumber()
