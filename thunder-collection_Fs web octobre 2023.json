@@ -1,0 +1,262 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Fs web octobre 2023",
+    "dateExported": "2023-10-23T12:25:20.414Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "877d6251-5102-4aa2-823e-8b540647e9bf",
+            "colId": "a00fa2ca-881b-47a4-96f9-08c9236d629d",
+            "containerId": "",
+            "name": "search by id 1",
+            "url": "localhost:3000/search/id/1",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-10-19T07:30:17.386Z",
+            "modified": "2023-10-19T07:30:17.386Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c84e4069-64e2-441d-9233-a127fa9a8057",
+            "colId": "a00fa2ca-881b-47a4-96f9-08c9236d629d",
+            "containerId": "",
+            "name": "search by name tutu",
+            "url": "localhost:3000/search/name/tutu",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-10-19T07:31:00.895Z",
+            "modified": "2023-10-19T07:31:00.895Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "04ddfe6e-0a04-4f6e-ba61-fe6bf33b9ae8",
+            "colId": "a00fa2ca-881b-47a4-96f9-08c9236d629d",
+            "containerId": "",
+            "name": "get all menu",
+            "url": "localhost:3000/menu",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-10-19T07:35:37.458Z",
+            "modified": "2023-10-19T07:35:37.458Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c45a6993-a760-4bb2-93fd-d0ade4981915",
+            "colId": "a00fa2ca-881b-47a4-96f9-08c9236d629d",
+            "containerId": "",
+            "name": "get menu queryParam : pageName=pizzas",
+            "url": "localhost:3000/menu?pageName=pizzas",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2023-10-19T07:36:10.624Z",
+            "modified": "2023-10-19T07:36:10.624Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "pageName",
+                    "value": "pizzas",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "55c925f3-8ebf-46b7-90b3-0e5bc5aa5f2e",
+            "colId": "a00fa2ca-881b-47a4-96f9-08c9236d629d",
+            "containerId": "",
+            "name": "get menu queryParam : type=carnos",
+            "url": "localhost:3000/menu?type=carnos",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2023-10-19T07:36:39.584Z",
+            "modified": "2023-10-19T07:36:39.584Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "type",
+                    "value": "carnos",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "25f7b3ab-d035-4fd8-af33-de0897426416",
+            "colId": "a00fa2ca-881b-47a4-96f9-08c9236d629d",
+            "containerId": "",
+            "name": "get menu queryParam : pageName=pizzas & type=carnos",
+            "url": "localhost:3000/menu?pageName=pizzas&type=carnos",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2023-10-19T07:37:09.363Z",
+            "modified": "2023-10-19T07:37:09.363Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "pageName",
+                    "value": "pizzas",
+                    "isPath": false
+                },
+                {
+                    "name": "type",
+                    "value": "carnos",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "610e9d93-a4f3-4493-9bbf-4610534bf247",
+            "colId": "a00fa2ca-881b-47a4-96f9-08c9236d629d",
+            "containerId": "",
+            "name": "get one menu dish id 1",
+            "url": "localhost:3000/menu/2",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2023-10-19T07:39:22.341Z",
+            "modified": "2023-10-19T13:10:27.790Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "6851cba8-8d2e-4315-b123-3a8e6267b3c5",
+            "colId": "a00fa2ca-881b-47a4-96f9-08c9236d629d",
+            "containerId": "",
+            "name": "post one command",
+            "url": "localhost:3000/command/one",
+            "method": "POST",
+            "sortNum": 80000,
+            "created": "2023-10-19T07:54:17.120Z",
+            "modified": "2023-10-23T08:01:52.340Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"type\" : \"Carnassier\",\n  \"qty\" : 1,\n  \"add\" : [],\n  \"rem\" : []\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "71a14db6-89dd-42ea-9db8-e67b7fe5693b",
+            "colId": "a00fa2ca-881b-47a4-96f9-08c9236d629d",
+            "containerId": "",
+            "name": "post one command with properties banned",
+            "url": "localhost:3000/command/one",
+            "method": "POST",
+            "sortNum": 90000,
+            "created": "2023-10-19T07:55:51.113Z",
+            "modified": "2023-10-19T07:55:51.113Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"type\" : \"carnos\",\n  \"qty\" : 1,\n  \"add\" : [],\n  \"rem\" : [],\n  \"admin\" : 1\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "c218b594-735d-49ce-b61e-dabd2b02f5bb",
+            "colId": "a00fa2ca-881b-47a4-96f9-08c9236d629d",
+            "containerId": "",
+            "name": "post multi command with withelist",
+            "url": "localhost:3000/command",
+            "method": "POST",
+            "sortNum": 100000,
+            "created": "2023-10-19T08:07:46.651Z",
+            "modified": "2023-10-19T08:07:46.651Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "[\n  {\n    \"type\" : \"carnos\",\n    \"qty\" : 1,\n    \"add\" : [],\n    \"rem\" : [],\n    \"admin\" : 1\n  },\n  {\n    \"type\" : \"carnos\",\n    \"qty\" : 1,\n    \"add\" : [],\n    \"rem\" : [],\n    \"admin\" : 1\n  }\n]\n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "5ebc9787-b106-46ac-ad15-fbc1e0d2358d",
+            "colId": "a00fa2ca-881b-47a4-96f9-08c9236d629d",
+            "containerId": "",
+            "name": "Update command 1",
+            "url": "localhost:3000/command/one/1",
+            "method": "PATCH",
+            "sortNum": 110000,
+            "created": "2023-10-23T08:22:43.323Z",
+            "modified": "2023-10-23T08:22:43.323Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"type\" : \"Végétarien\",\n  \"qty\" : 1,\n  \"add\" : [],\n  \"rem\" : []\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "cc8509c2-8710-437a-a5d4-01f94cf972e8",
+            "colId": "a00fa2ca-881b-47a4-96f9-08c9236d629d",
+            "containerId": "",
+            "name": "Get All Command",
+            "url": "localhost:3000/command/",
+            "method": "GET",
+            "sortNum": 120000,
+            "created": "2023-10-23T09:50:37.745Z",
+            "modified": "2023-10-23T09:50:37.745Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "3fc809f6-57e5-4416-82bc-6b0a74454523",
+            "colId": "a00fa2ca-881b-47a4-96f9-08c9236d629d",
+            "containerId": "",
+            "name": "getall command admin (soft delete include)",
+            "url": "localhost:3000/command/admin",
+            "method": "GET",
+            "sortNum": 130000,
+            "created": "2023-10-23T10:08:34.759Z",
+            "modified": "2023-10-23T10:12:08.647Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f7c8b8b0-1568-4ec8-a05e-ddcd89488b84",
+            "colId": "a00fa2ca-881b-47a4-96f9-08c9236d629d",
+            "containerId": "",
+            "name": "remove soft delete command",
+            "url": "localhost:3000/command/reopen/7",
+            "method": "PATCH",
+            "sortNum": 140000,
+            "created": "2023-10-23T12:22:57.330Z",
+            "modified": "2023-10-23T12:22:57.330Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "2b44e824-d503-450f-b8c8-8bf89a5cb2ad",
+            "colId": "a00fa2ca-881b-47a4-96f9-08c9236d629d",
+            "containerId": "",
+            "name": "soft delete one commnad",
+            "url": "localhost:3000/command/one/7",
+            "method": "DELETE",
+            "sortNum": 150000,
+            "created": "2023-10-23T12:23:53.734Z",
+            "modified": "2023-10-23T12:23:53.734Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
