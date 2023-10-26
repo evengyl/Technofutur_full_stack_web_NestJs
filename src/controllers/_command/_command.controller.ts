@@ -32,6 +32,21 @@ export class CommandController {
         }
     }
 
+
+    @Get(":id")
+    getOne(
+        @Param("id", ParseIntPipe) id : number
+    ) : Promise<any>
+    {
+        try{
+            return this.commandService.getOneCommand(id)
+        }
+        catch(error){
+            console.log(error)
+            return error
+        }
+    }
+
     @Post("one")
     async addOneCommand(
         @Body(ValidationPipe) oneCommand : Command_DTO

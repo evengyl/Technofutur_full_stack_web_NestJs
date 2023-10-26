@@ -1,4 +1,5 @@
-import moment from "moment"
+import moment from 'moment';
+import 'moment-timezone';
 import { BeforeUpdate, BeforeInsert, BeforeSoftRemove, CreateDateColumn, UpdateDateColumn, DeleteDateColumn } from "typeorm"
 
 export class LifeTime{

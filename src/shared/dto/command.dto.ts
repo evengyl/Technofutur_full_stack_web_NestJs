@@ -1,11 +1,13 @@
-import { IsArray, IsDefined, IsEnum, IsNumber, IsString, Max, MaxLength, Min, MinLength } from "class-validator"
-import { TypeRegime } from "../entities/command/command.entity"
+import { IsArray, IsDefined, IsNumber, Max, Min, ValidateNested } from "class-validator"
+import { TypeRegimeCommand_DTO, TypeRegime_DTO } from "./typeRegime.dto"
+import { Type } from "class-transformer"
 
 export class Command_DTO
 {
     @IsDefined()
-    @IsEnum(TypeRegime)
-    type : TypeRegime
+    @ValidateNested()
+    @Type(() => TypeRegimeCommand_DTO)
+    type : TypeRegimeCommand_DTO
 
     @IsDefined()
     @IsNumber()

@@ -29,6 +29,6 @@ VALUES
 ('Digestifs', 'Alcoolisé', 'Rhum Vanillé', 6.5),
 ('Digestifs', 'Alcoolisé', 'Wishky', 6),
 ('Digestifs', 'Alcoolisé', 'Limoncelo', 4),
-('Digestifs', 'Alcoolisé', 'Eau pur d\'usine nucléaire', 1.5);
+('Digestifs', 'Alcoolisé', 'Eau pur d\''usine nucléaire', 1.5);
 
 

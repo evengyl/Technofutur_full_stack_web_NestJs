@@ -15,14 +15,25 @@ export class CommandService {
 
     async getAllCommand()
     {
-        return await this.CommandRepo.findAndCount()
+        return await this.CommandRepo.findAndCount({
+            relations : { type : true}
+        })
     }
 
     
     async getAllCommandAdmin()
     {
         return await this.CommandRepo.findAndCount({
-            withDeleted : true
+            withDeleted : true,
+            relations : { type : true}
+        })
+    }
+
+    async getOneCommand(id : number)
+    {
+        return await this.CommandRepo.find({
+            where : { id : id},
+            relations : { type : true }
         })
     }
 
@@ -30,7 +41,9 @@ export class CommandService {
     async addCommand(list : Command_DTO[])
     {
         console.log(list)
-        return await { message : "Nous avons bien recu VOS commandes, merci XoXo"}
+        let returnedData = await this.CommandRepo.save(list)
+
+        return await { returnedData }
     }
 
 
@@ -44,13 +57,8 @@ export class CommandService {
 
     async updateOneCommand(id : number, updatedCommand : Command_DTO)
     {
+        let updatedCommandEntity = this.CommandRepo.create({ id : id , ...updatedCommand})
 
-        let idFounded = await this.CommandRepo.findOneByOrFail({ id })
-        .catch(err => {
-            throw new HttpException('COmmande non trouvée', HttpStatus.NOT_FOUND)
-        })
-        
-        let updatedCommandEntity = this.CommandRepo.create({ id : idFounded.id , ...updatedCommand})
         let updatedCommandOk = await this.CommandRepo.save(updatedCommandEntity)
 
         return await { updatedCommandOk }
@@ -60,7 +68,7 @@ export class CommandService {
     {
         let idFounded = await this.CommandRepo.findOneByOrFail({ id })
         .catch(err => {
-            throw new HttpException('COmmande non trouvée', HttpStatus.NOT_FOUND)
+            throw new HttpException('Commande non trouvée', HttpStatus.NOT_FOUND)
         })
 
         //delete de la db totalement ! (hard delete by entity)
@@ -84,7 +92,7 @@ export class CommandService {
             withDeleted : true
         })
         .catch(err => {
-            throw new HttpException('COmmande non trouvée', HttpStatus.NOT_FOUND)
+            throw new HttpException('Commande non trouvée', HttpStatus.NOT_FOUND)
         })
 
         //let recoverCommand = await this.CommandRepo.recover(idFounded)
@@ -92,5 +100,13 @@ export class CommandService {
 
         return { restoreCommand }
 
+    }
+
+    async checkCommandId(id : number)
+    {
+        return await this.CommandRepo.findOneByOrFail({ id })
+        .catch(err => {
+            throw new HttpException('Commande non trouvée', HttpStatus.NOT_FOUND)
+        })
     }
 }
